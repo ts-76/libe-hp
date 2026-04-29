@@ -1,58 +1,147 @@
 ---
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import PagefindSearch from "./PagefindSearch.astro";
 ---
 
 <header>
-	<nav>
-		<a href="/" class="site-title">{SITE_TITLE}</a>
-		<div class="nav-links">
-			<HeaderLink href="/">トップ</HeaderLink>
-			<HeaderLink href="/blog">ブログ</HeaderLink>
-			<HeaderLink href="/contact">お問い合わせ</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <div class="nav-main">
+      <a href="/" class="site-title">{SITE_TITLE}</a>
+      <div class="nav-links">
+        <HeaderLink href="/">トップ</HeaderLink>
+        <HeaderLink href="/blog">ブログ</HeaderLink>
+        <HeaderLink href="/contact">お問い合わせ</HeaderLink>
+      </div>
+    </div>
+    <div class="search-wrap" aria-label="サイト内検索">
+      <PagefindSearch
+        id="site-search"
+        className="pagefind-ui pagefind-ui-header"
+        uiOptions={{ showImages: false }}
+      />
+    </div>
+  </nav>
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1.5em;
-		background: white;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 960px;
-		margin: 0 auto;
-		height: 56px;
-	}
-	.site-title {
-		font-weight: 700;
-		font-size: 1rem;
-		color: rgb(var(--black));
-		text-decoration: none;
-		letter-spacing: 0.02em;
-	}
-	.nav-links {
-		display: flex;
-		gap: 0.25em;
-	}
-	.nav-links a {
-		padding: 0.5em 0.75em;
-		color: rgb(var(--gray-dark));
-		border-bottom: 2px solid transparent;
-		text-decoration: none;
-		font-size: 0.95rem;
-		transition: color 0.15s;
-	}
-	.nav-links a:hover {
-		color: rgb(var(--black));
-	}
-	.nav-links a.active {
-		color: rgb(var(--black));
-		border-bottom-color: rgb(var(--accent));
-	}
+header {
+  margin: 0;
+  padding: 0 1.5em;
+  background: white;
+  border-bottom: 1px solid rgb(var(--gray-light));
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 56px;
+  padding: 0.75rem 0;
+}
+.nav-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+.site-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(var(--black));
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-links {
+  display: flex;
+  gap: 0.25em;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  padding: 0.5em 0.75em;
+  color: rgb(var(--gray-dark));
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s;
+}
+.nav-links a:hover {
+  color: rgb(var(--black));
+}
+.nav-links a.active {
+  color: rgb(var(--black));
+  border-bottom-color: rgb(var(--accent));
+}
+.search-wrap {
+  position: relative;
+  flex: 0 1 320px;
+  width: min(320px, 100%);
+}
+:global(.pagefind-ui-header) {
+  --pagefind-ui-primary: rgb(var(--accent));
+  --pagefind-ui-text: rgb(var(--black));
+  --pagefind-ui-background: white;
+  --pagefind-ui-border: rgb(var(--gray-light));
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-font: var(--font-atkinson), sans-serif;
+  --pagefind-ui-scale: 0.85;
+}
+:global(.pagefind-ui-header .pagefind-ui__search-input) {
+  background: white;
+}
+:global(.pagefind-ui-header .pagefind-ui__drawer) {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  padding: 0.25rem 0 0.5rem;
+  max-height: min(70vh, 28rem);
+  overflow-y: auto;
+  border: 1px solid rgb(var(--gray-light));
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 18px 40px rgba(15, 18, 25, 0.12);
+  z-index: 20;
+}
+:global(.pagefind-ui-header .pagefind-ui__drawer.pagefind-ui__hidden) {
+  display: none;
+}
+:global(.pagefind-ui-header .pagefind-ui__results) {
+  padding: 0 0.5rem;
+}
+:global(.pagefind-ui-header .pagefind-ui__result) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media (max-width: 840px) {
+  nav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .nav-main {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .search-wrap {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
+  }
+}
+@media (max-width: 560px) {
+  header {
+    padding: 0 1rem;
+  }
+  .nav-links {
+    gap: 0;
+  }
+  .nav-links a {
+    padding: 0.4em 0.55em;
+    font-size: 0.9rem;
+  }
+}
 </style>
