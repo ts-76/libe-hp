@@ -14,7 +14,7 @@ pass_filenames = false
 [[repos.hooks]]
 id = "biome"
 name = "biome check"
-entry = "npm exec -- biome check --staged"
+entry = "npm exec -- biome check ."
 language = "system"
 pass_filenames = false
 

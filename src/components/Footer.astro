@@ -1,9 +1,11 @@
 ---
+import { SITE_TITLE } from "../consts";
+
 const today = new Date();
 ---
 
 <footer>
-  <p>&copy; {today.getFullYear()} Your Name</p>
+  <p>&copy; {today.getFullYear()} {SITE_TITLE}</p>
 </footer>
 
 <style>

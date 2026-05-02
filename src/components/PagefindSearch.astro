@@ -1,61 +1,33 @@
----
-import "@pagefind/default-ui/css/ui.css";
-
-type Props = {
-  id?: string;
-  className?: string;
-  query?: string;
-  uiOptions?: Record<string, unknown>;
-};
-
-const { id, className, query, uiOptions = {} } = Astro.props;
-const bundlePath = `${import.meta.env.BASE_URL}pagefind/`;
----
-
-<div
-  id={id}
-  class:list={[className, 'pagefind-init']}
-  data-pagefind-ui
-  data-bundle-path={bundlePath}
-  data-query={query}
-  data-ui-options={JSON.stringify(uiOptions)}
-></div>
+<div id="search" class="pagefind-ui-header"></div>
 
 <script>
 import { PagefindUI } from "@pagefind/default-ui";
+import "@pagefind/default-ui/css/ui.css";
 
-function initPagefind() {
-  const selector = "[data-pagefind-ui]";
-  for (const element of document.querySelectorAll(
-    `${selector}.pagefind-init`,
-  )) {
-    const elementSelector = [
-      ...(element.id ? [`#${element.id}`] : []),
-      ...[...element.classList.values()].map((className) => `.${className}`),
-    ].join("");
-    const ui = JSON.parse(element.getAttribute("data-ui-options") ?? "{}");
-    new PagefindUI({
-      ...ui,
-      element: elementSelector,
-      bundlePath: element.getAttribute("data-bundle-path") ?? "/pagefind/",
-    });
-    element.classList.remove("pagefind-init");
-    const presetQuery = element.getAttribute("data-query");
-    if (!presetQuery) {
-      continue;
-    }
-    const input = element.querySelector('input[type="text"]');
-    if (input instanceof HTMLInputElement) {
-      input.value = presetQuery;
-      input.dispatchEvent(new Event("input", { bubbles: true }));
-    }
-  }
-}
+new PagefindUI({
+  element: "#search",
+  showImages: false,
+  showSubResults: true,
+  translations: {
+    placeholder: "サイト内検索",
+    zero_results: "検索結果がありません",
+    clear_search: "",
+    load_more: "もっと見る",
+    search_label: "サイト内検索",
+    filters_label: "絞り込み",
+  },
+});
 
-document.addEventListener("astro:page-load", initPagefind);
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initPagefind);
-} else {
-  initPagefind();
-}
+const searchRoot = document.querySelector("#search");
+const setClearButtonLabel = () => {
+  const clearButton = searchRoot?.querySelector(".pagefind-ui__search-clear");
+  clearButton?.setAttribute("aria-label", "検索を消す");
+  clearButton?.setAttribute("title", "検索を消す");
+};
+
+setClearButtonLabel();
+new MutationObserver(setClearButtonLabel).observe(searchRoot, {
+  childList: true,
+  subtree: true,
+});
 </script>

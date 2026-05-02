@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "libe-hp",
+  "compatibility_date": "2026-05-02",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "env": {
+    "production": {
+      "name": "libe-hp",
+      "preview_urls": false
+    }
+  }
+}
