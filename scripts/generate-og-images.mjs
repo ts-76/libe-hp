@@ -75,22 +75,20 @@ function getImageOptions(page) {
     },
     padding: 72,
     fonts: [
-      "./node_modules/@fontsource/noto-sans-jp/files/noto-sans-jp-japanese-700-normal.woff",
-      "./node_modules/@fontsource/noto-sans-jp/files/noto-sans-jp-japanese-400-normal.woff",
-      "./node_modules/@fontsource/noto-sans-jp/files/noto-sans-jp-latin-700-normal.woff",
-      "./node_modules/@fontsource/noto-sans-jp/files/noto-sans-jp-latin-400-normal.woff",
+      "./src/assets/fonts/noto-sans-jp-japanese-700-normal.ttf",
+      "./src/assets/fonts/noto-sans-jp-japanese-400-normal.ttf",
     ],
     font: {
       title: {
-        families: ["Noto Sans JP"],
+        families: ["Noto Sans JP Thin"],
         size: 68,
-        weight: "bold",
+        weight: "Bold",
         lineHeight: 1.15,
       },
       description: {
-        families: ["Noto Sans JP"],
+        families: ["Noto Sans JP Thin"],
         size: 34,
-        weight: "normal",
+        weight: "Normal",
         lineHeight: 1.5,
       },
     },
