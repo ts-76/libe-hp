@@ -1,15 +1,15 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+title: 'Markdownの書き方ガイド'
+description: 'Astroの記事で使える基本的なMarkdown記法のサンプルです。'
 pubDate: 'Jun 19 2024'
 heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+この記事は、ブログを書くときによく使うMarkdown記法のサンプルです。文章、見出し、画像、引用、表、コード、リストなどの書き方を確認できます。
 
-## Headings
+## 見出し
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+見出しは `#` の数で大きさが変わります。記事のタイトルに近い内容ほど大きく、細かい説明ほど小さくします。
 
 # H1
 
@@ -23,192 +23,176 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ###### H6
 
-## Paragraph
+## 段落
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+通常の文章は、そのまま書くだけで段落になります。読みやすくするために、内容が変わるところで空行を入れるとよいです。
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+長い文章を一つの段落にまとめすぎると読みにくくなります。ひとつの段落では、ひとつの話題だけを書くようにすると整理しやすくなります。
 
-## Images
+## 画像
 
-### Syntax
+### 書き方
 
 ```markdown
-![Alt text](./full/or/relative/path/of/image)
+![代替テキスト](./画像へのパス)
 ```
 
-### Output
+### 表示例
 
-![blog placeholder](../../assets/blog-placeholder-about.jpg)
+![ブログのサンプル画像](../../assets/blog-placeholder-about.jpg)
 
-## Blockquotes
+## 引用
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+引用は、他の文章やメモを紹介するときに使います。
 
-### Blockquote without attribution
+### 出典なしの引用
 
-#### Syntax
+#### 書き方
 
 ```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+> これは引用文です。  
+> **Markdown記法**も引用の中で使えます。
 ```
 
-#### Output
+#### 表示例
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+> これは引用文です。  
+> **Markdown記法**も引用の中で使えます。
 
-### Blockquote with attribution
+### 出典付きの引用
 
-#### Syntax
+#### 書き方
 
 ```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
+> 記憶を共有するのではなく、伝えることで記憶を共有する。<br>
 > — <cite>Rob Pike[^1]</cite>
 ```
 
-#### Output
+#### 表示例
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
+> 記憶を共有するのではなく、伝えることで記憶を共有する。<br>
 > — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^1]: 上記はRob Pikeの発表を参考にした引用例です。
 
-## Tables
+## 表
 
-### Syntax
+### 書き方
 
 ```markdown
-| Italics   | Bold     | Code   |
+| 斜体      | 太字     | コード |
 | --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| _斜体_    | **太字** | `code` |
 ```
 
-### Output
+### 表示例
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| 斜体   | 太字     | コード |
+| ------ | -------- | ------ |
+| _斜体_ | **太字** | `code` |
 
-## Code Blocks
+## コードブロック
 
-### Syntax
+### 書き方
 
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+コードを表示するときは、3つのバッククォートで囲みます。最初のバッククォートのあとに `html` や `javascript` などの言語名を書くと、見やすく色分けされます。
 
 ````markdown
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
+    <title>サンプル</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>テスト</p>
   </body>
 </html>
 ```
 ````
 
-### Output
+### 表示例
 
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
+    <title>サンプル</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>テスト</p>
   </body>
 </html>
 ```
 
-## List Types
+## リスト
 
-### Ordered List
+### 番号付きリスト
 
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
+#### 書き方
 
 ```markdown
-- List item
-- Another item
-- And another item
+1. ひとつ目
+2. ふたつ目
+3. みっつ目
 ```
 
-#### Output
+#### 表示例
 
-- List item
-- Another item
-- And another item
+1. ひとつ目
+2. ふたつ目
+3. みっつ目
 
-### Nested list
+### 箇条書きリスト
 
-#### Syntax
+#### 書き方
 
 ```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+- 項目
+- 別の項目
+- さらに別の項目
 ```
 
-#### Output
+#### 表示例
 
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+- 項目
+- 別の項目
+- さらに別の項目
 
-## Other Elements — abbr, sub, sup, kbd, mark
+### 入れ子のリスト
 
-### Syntax
+#### 書き方
 
 ```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+- 果物
+  - りんご
+  - みかん
+  - バナナ
+- 乳製品
+  - 牛乳
+  - チーズ
 ```
 
-### Output
+#### 表示例
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+- 果物
+  - りんご
+  - みかん
+  - バナナ
+- 乳製品
+  - 牛乳
+  - チーズ
 
-H<sub>2</sub>O
+## その他の記法
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+| 種類 | 書き方 | 表示例 |
+| ---- | ------ | ------ |
+| 略語 | `<abbr title="HyperText Markup Language">HTML</abbr>` | <abbr title="HyperText Markup Language">HTML</abbr> |
+| 下付き文字 | `H<sub>2</sub>O` | H<sub>2</sub>O |
+| 上付き文字 | `X<sup>2</sup>` | X<sup>2</sup> |
+| キーボード | `<kbd>Ctrl</kbd> + <kbd>C</kbd>` | <kbd>Ctrl</kbd> + <kbd>C</kbd> |
+| マーカー | `<mark>大切な部分</mark>` | <mark>大切な部分</mark> |
 
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+Markdownだけでも、ブログ記事に必要な基本的な表現は十分に作れます。まずは見出しと段落から使い始めるのがおすすめです。
