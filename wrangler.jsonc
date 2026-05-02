@@ -2,6 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "libe-hp",
   "compatibility_date": "2026-05-02",
+  "workers_dev": true,
+  "preview_urls": false,
   "assets": {
     "directory": "./dist/client",
     "binding": "ASSETS"

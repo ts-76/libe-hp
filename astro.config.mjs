@@ -12,7 +12,7 @@ import { SITE_URL } from "./src/site.config.mjs";
 export default defineConfig({
   output: "server",
   adapter: cloudflare(),
-  site: SITE_URL,
+  site: SITE_URL || undefined,
   integrations: [mdx(), sitemap(), pagefind(), robotsTxt()],
   fonts: [
     {
