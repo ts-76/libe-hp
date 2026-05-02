@@ -16,11 +16,12 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), pagefind(), robotsTxt()],
   fonts: [
     {
-      provider: fontProviders.google(),
+      provider: fontProviders.fontsource(),
       name: "Noto Sans JP",
       cssVariable: "--font-noto-sans-jp",
       fallbacks: ["sans-serif"],
       weights: [400, 700],
+      subsets: ["japanese", "latin"],
     },
     {
       provider: fontProviders.local(),
