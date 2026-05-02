@@ -17,4 +17,6 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data}> <Content /> </BlogPost>
+<BlogPost {...post.data} ogImagePath={`/og/blog/${post.id}.png`}>
+  <Content />
+</BlogPost>

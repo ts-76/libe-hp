@@ -16,7 +16,11 @@ const posts = (await getCollection("blog"))
 <!doctype html>
 <html lang="ja">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      ogImagePath="/og/index.png"
+    />
   </head>
   <body>
     <Header />

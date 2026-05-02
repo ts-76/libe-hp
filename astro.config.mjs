@@ -5,13 +5,15 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
 import pagefind from "astro-pagefind";
+import robotsTxt from "astro-robots-txt";
+import { SITE_URL } from "./src/site.config";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: cloudflare(),
-  site: "https://example.com",
-  integrations: [mdx(), sitemap(), pagefind()],
+  site: SITE_URL,
+  integrations: [mdx(), sitemap(), pagefind(), robotsTxt()],
   fonts: [
     {
       provider: fontProviders.local(),
