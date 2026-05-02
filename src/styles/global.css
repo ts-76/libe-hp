@@ -20,7 +20,8 @@ html {
     0 16px 32px rgba(var(--gray), 33%);
 }
 body {
-  font-family: var(--font-atkinson);
+  font-family:
+    var(--font-noto-sans-jp), var(--font-atkinson), system-ui, sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
