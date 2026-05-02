@@ -69,9 +69,7 @@ function getImageOptions(page) {
       [79, 136, 190],
     ],
     border: {
-      color: [255, 255, 255],
-      width: 10,
-      side: "block-end",
+      width: 0,
     },
     padding: 72,
     fonts: [
