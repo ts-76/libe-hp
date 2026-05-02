@@ -2,6 +2,10 @@
 
 Astro.js と Cloudflare Workers を使ったホームページ制作プロジェクトです。
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ts-76/libe-hp)
+
+このボタンは、Cloudflare アカウントにログインして、このテンプレートを Workers にデプロイするための入口です。公開前に `src/site.config.mjs` の `SITE_URL` と、必要に応じて `CLOUDFLARE_WEB_ANALYTICS_TOKEN` を設定してください。
+
 ## はじめに
 
 このプロジェクトは、非エンジニア・初心者でも同じ手順で作業を始められるようにしています。
