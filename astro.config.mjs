@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
 import pagefind from "astro-pagefind";
 import robotsTxt from "astro-robots-txt";
-import { SITE_URL } from "./src/site.config";
+import { SITE_URL } from "./src/site.config.mjs";
 
 // https://astro.build/config
 export default defineConfig({

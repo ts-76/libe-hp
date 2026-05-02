@@ -3,4 +3,4 @@ export {
   SITE_DESCRIPTION,
   SITE_TITLE,
   SITE_URL,
-} from "./site.config";
+} from "./site.config.mjs";

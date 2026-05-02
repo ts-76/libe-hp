@@ -50,7 +50,7 @@ npm run dev
 
 ## 最初に変更する場所
 
-サイト名、説明文、公開URLは `src/site.config.ts` にまとめています。
+サイト名、説明文、公開URLは `src/site.config.mjs` にまとめています。
 
 Claude Code を使っている場合は、次のように依頼できます。
 

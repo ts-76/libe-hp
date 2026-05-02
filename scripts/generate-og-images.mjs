@@ -24,7 +24,7 @@ for (const file of await readdir("node_modules/astro-og-canvas/dist")) {
 const { generateOpenGraphImage } = await import(
   "../.astro/astro-og-canvas/generateOpenGraphImage.js"
 );
-const siteConfig = await import("../src/site.config.ts");
+const siteConfig = await import("../src/site.config.mjs");
 const outputDir = "public/og";
 
 function readFrontmatter(content) {
