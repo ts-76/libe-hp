@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "setup": "node scripts/setup.mjs",
+    "setup:project": "node scripts/setup.mjs",
     "doctor": "node scripts/doctor.mjs",
     "dev": "astro dev",
     "build": "node scripts/generate-og-images.mjs && astro build",
